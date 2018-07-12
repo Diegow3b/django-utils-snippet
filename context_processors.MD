@@ -26,6 +26,7 @@ def yourcontextname_context_processor(request):
     data = {
         'something': "something",
         'another_thing': "another_thing",
+        'array_of_thing': ["thing", "thing", "thing", ],
     }
     return data
 ```
@@ -35,4 +36,7 @@ In your template the variables can be accesed
 ```html
 {{ something }}
 {{ another_thing }}
+{% for thing in array_of_thing %}
+    {{ thing }}
+{% endfor %}
 ```
